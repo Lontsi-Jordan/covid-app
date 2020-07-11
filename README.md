@@ -1,4 +1,4 @@
-# covid-parker
+# covid-app
 
 ## Project setup
 ```
