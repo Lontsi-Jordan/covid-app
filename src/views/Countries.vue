@@ -8,16 +8,16 @@
             <b-card-text>
               <b-row>
                 <b-alert show variant="primary" class="col-md-3 col-sm-2 m-auto">
-                    <h4 class="alert-heading">New Confirmed</h4>
-                    <p class="text-white text-bold">{{ country["NewConfirmed"] }}</p>
+                    <h4 class="alert-heading">New Confirmed <b-icon icon="graph-up" scale="1"></h4>
+                    <p class="font-weight-bolder text-black">{{ country["NewConfirmed"] }}</p>
                   </b-alert>
                   <b-alert show variant="danger" class="col-md-3 col-sm-2 m-auto">
-                    <h4 class="alert-heading">New Deaths</h4>
-                    <p class="text-white text-bold">{{ country["NewDeaths"] }}</p>
+                    <h4 class="alert-heading">New Deaths <b-icon icon="graph-up" scale="1"></b-icon></h4>
+                    <p class="font-weight-bolder text-black">{{ country["NewDeaths"] }}</p>
                   </b-alert>
                   <b-alert show variant="warning" class="col-md-3 col-sm-2 m-auto">
-                    <h4 class="alert-heading">New Recovered</h4>
-                    <p class="text-white">{{ country["NewRecovered"] }}</p>
+                    <h4 class="alert-heading">New Recovered <b-icon icon="graph-up" scale="1"></b-icon></h4>
+                    <p class="font-weight-bolder text-black">{{ country["NewRecovered"] }}</p>
                   </b-alert>
               </b-row>
             </b-card-text>
