@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <b-form-input placeholder="Search country" class="mt-2 mb-2"></b-form-input>
+      <b-form-input placeholder="Search country" class="mt-2 mb-2" v-model="search"></b-form-input>
       <b-row>
         <b-col md="12">
           <b-card class="mb-2" v-for="(country) in countries" :key="country.id" :title="country['Country']" :sub-title="country['CountryCode']">
@@ -32,13 +32,25 @@
 <script>
 export default {
   name: 'Country',
+  data(){
+    return {
+      search:''
+    }
+  },
   computed:{
     date(){
       return this.$store.state.date;
     },
     countries(){
-      return this.$store.state.countries;
-    }
+      if(this.search === ''){
+        return this.$store.state.countries;
+      }
+      let self = this;
+      return this.$store.state.countries.filter(
+        (country) => {
+        return country["Country"].toLowerCase().includes(self.search.toLowerCase());
+      });
+    },
   },
 }
 </script>
