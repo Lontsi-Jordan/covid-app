@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <HelloWorld/>
+    <GlobalCase/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import GlobalCase from '@/components/GlobalCase.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    GlobalCase
   }
 }
 </script>

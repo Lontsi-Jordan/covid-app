@@ -3,7 +3,7 @@
     <div class="container">
       <b-row class="justify-content-center p-2">
         <div
-          class="col-xl-4 m-2 col-sm-6 col-12"
+          class="col-xl-5 m-1 col-sm-6 col-12"
           v-for="(item, index) in global"
           :key="item.id"
           :sub-title="index | formatLabel"
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "GlobalCase",
   filters: {
     formatLabel: function(label) {
       label = label.toString();

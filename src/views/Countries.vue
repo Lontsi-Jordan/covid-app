@@ -4,24 +4,30 @@
       <b-form-input placeholder="Search country" class="mt-2 mb-2" v-model="search"></b-form-input>
       <b-row>
         <b-col md="12">
+          <div class="text-center justify-content-center" v-if="countries.length<=0">
+            <b-spinner
+              :variant="variants[Math.floor(Math.random() * Math.floor(7))]">
+            </b-spinner>
+            <p class="text-center">Loading Data...</p>
+          </div>
           <b-card class="mb-2" v-for="(country) in countries" :key="country.id" :title="country['Country']" :sub-title="country['CountryCode']">
             <b-card-text>
               <b-row>
-                <b-alert show variant="primary" class="col-md-3 col-sm-2 m-auto">
-                    <h4 class="alert-heading">New Confirmed <b-icon icon="graph-up" scale="1"></h4>
-                    <p class="font-weight-bolder text-black">{{ country["NewConfirmed"] }}</p>
-                  </b-alert>
-                  <b-alert show variant="danger" class="col-md-3 col-sm-2 m-auto">
-                    <h4 class="alert-heading">New Deaths <b-icon icon="graph-up" scale="1"></b-icon></h4>
-                    <p class="font-weight-bolder text-black">{{ country["NewDeaths"] }}</p>
-                  </b-alert>
-                  <b-alert show variant="warning" class="col-md-3 col-sm-2 m-auto">
-                    <h4 class="alert-heading">New Recovered <b-icon icon="graph-up" scale="1"></b-icon></h4>
-                    <p class="font-weight-bolder text-black">{{ country["NewRecovered"] }}</p>
-                  </b-alert>
+                <b-alert show variant="primary" class="col-md-3 col-sm-3 m-md-auto">
+                  <h4 class="alert-heading">New Confirmed <b-icon icon="graph-up" scale="1"></b-icon></h4>
+                  <strong>{{ country["NewConfirmed"] }}</strong>
+                </b-alert>
+                <b-alert show variant="danger" class="col-md-3 col-sm-3 m-md-auto">
+                  <h4 class="alert-heading">New Deaths <b-icon icon="graph-up" scale="1"></b-icon></h4>
+                  <strong>{{ country["NewDeaths"] }}</strong>
+                </b-alert>
+                <b-alert show variant="warning" class="col-md-3 col-sm-3 m-md-auto">
+                  <h4 class="alert-heading">New Recovered <b-icon icon="graph-up" scale="1"></b-icon></h4>
+                  <strong>{{ country["NewRecovered"] }}</strong>
+                </b-alert>
               </b-row>
             </b-card-text>
-            <a href="#" class="card-link btn btn-primary text-white">see more</a>
+            <router-link v-bind:to="'country/detail/'+country['CountryCode']">View more</router-link>
           </b-card>
         </b-col>
       </b-row>
@@ -34,7 +40,8 @@ export default {
   name: 'Country',
   data(){
     return {
-      search:''
+      search:'',
+      variants: ['primary', 'secondary', 'danger', 'warning', 'success', 'info', 'light', 'dark']
     }
   },
   computed:{
