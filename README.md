@@ -1,24 +1,20 @@
 # covid-app
-
-## Project setup
 ```
-npm install
+A web application to inform people about the evolution of covid-19 in the world
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Features
++ Show global case
++ quickly get information by searching by country
++ see all the information for a specific country
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Examples
 
-### Lints and fixes files
-```
-npm run lint
-```
+![alt text](./src/assets/global.png "Global Case")
+![alt text](./src/assets/all-countries.png "All infected countries")
+![alt text](./src/assets/detail.png "All information of country")
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Contribute
+```
+Every contributions are welcome
+```
